@@ -1,15 +1,10 @@
-import Head from 'next/head'
 import ArticleList from "../components/Article"
 import {server} from "../config/index"
 
 export default function Home({articles}) {
   return (
     <div>
-      <Head>
-        <title>Divyum</title>
-        <meta name="keywords" content="web developement, programming"/>
-      </Head>
-      <ArticleList articles={articles}></ArticleList>
+    <ArticleList articles={articles}></ArticleList>
     </div>
   )
 }

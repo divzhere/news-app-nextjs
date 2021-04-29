@@ -1,9 +1,11 @@
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 import {server} from "../../../config/index"
+import Meta from "../../../components/Meta"
 const article = ({article}) => {
     return (
         <div>
+            <Meta title={article.title}/>
              <h1>{article.title}</h1>
             <p>{article.body}</p>
             <br></br>
@@ -11,9 +13,6 @@ const article = ({article}) => {
         </div>
     )
 }
-
-
-
 export const getStaticProps = async (context) => {
     const res = await fetch(`${server}/api/articles/${context.params.id}`)
 
